@@ -1,3 +1,6 @@
+# docker-compose up
+It would start a webserver that listen on port 8443, swagger is kept even if the project environment is in production.
+
 I cannot take all the time I want for the technical test, that's why I decided to make a list of changes I would have done if it was a real project. I'll go over the multiple enhancements I would have done and then some difficulties I encoutered and how I did solve them.
 
 ### Relationships
@@ -8,9 +11,6 @@ Putting the database context inside a service like AvailabilityService which wou
 
 ### Availability
 I first thought I would have to generate free appointment slots based on the provider availability, but then if I think large scale, that would overload the database before even needing the data. So the solution was to check if we have already an appointment for the provided timeslot or if there is a conflict, yes it will add a query to the server, but in my opinion it is lighter then prefilling the database.
-
-### IDs - My GOD!
-To be honest I did not know I could have computed columns in my table, so when I first read the test details about combining first and last name as an id, I thought I could just concatenate them. Well it turns out that's exactly what I should do, expect some changes to the syntax. If it were up to me, I would have gone with int ids over strings.
 
 ### Functional and unit testing
 As I am more familiar with mocha and phpunit, I will write in plain language the tests I would have done:
