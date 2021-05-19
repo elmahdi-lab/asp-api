@@ -17,5 +17,5 @@ As I am more familiar with mocha and phpunit, I will write in plain language the
 
 - Assert the start and end minutes of the availabilities and appointments are quarters only (15 value will pass, 16 value will fail)
 - Assert each model exists after adding them functionnaly.
-- Assert a provider with an availability of 8 am -> 12 am cannot add a second one with these slots (8-12, 6-12, 9-12, 6-10, 9-14)
+- Assert a provider with an availability of 8 -> 12 cannot add a second one with these slots (8-12, 6-12, 9-12, 6-10, 9-14)
 - Assert an appointment 9-10am in the previous availability cannot add a second one for the same provider with these slots (9-10, 8-10,9-11, 9:15-9:45, 8-12)
